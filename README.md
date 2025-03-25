@@ -39,6 +39,23 @@ The query vector is created when the user enters a query, processes a user-input
 
 The relevance of a **section_text** to the query is calculated by the inner product **(scalar product)** of the two vectors, the **section_weights** vector and the **query_list** vector. The **word_relevance_score** is list consisting of relevance scores of each term which are basically the term’s TF/IDF weights. To compute the relevance score for each section text with respect to the query we receive as input from the user, it multiplies (inner product) the **section_weights[query_word_index]** with the **word_relevance_score** and then adds this calculated relevance score for the term to the **section_total_relevance_score** to provide the relevance score for the entire query sentence.
 
+## How to Run the Project:
+Prerequisites:
+
+Python (with nltk and necessary dependencies)
+
+Hadoop (with MapReduce framework configured)
+
+Dataset:
+Ensure the dataset contains a SECTION_TEXT column with text data for processing.
+
+Steps:
+
+Execute the MapReduce jobs for calculating TF, IDF, and TF-IDF weights.
+
+Input a query and observe the ranked search results based on relevance scores.
+
+
 ## Conclusion:
 
 This implementation aims to solve the problem of finding relevant information during information retrieval. By computing relevance scores for each section, we are able to determine how closely each section is related to the query. This identification is based on the similarity between the content of each section and the query sentence. Sections that contain words similar to those in the query sentence are likely to receive higher relevance scores. Search engines can use these relevance scores to present search results in a ranked order, prioritizing sections that are likely to be most useful to the user.
